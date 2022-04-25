@@ -1,4 +1,4 @@
-.skills{
+.skills {
     margin-bottom: 20px;
 }
 
@@ -9,21 +9,21 @@
 .skill > span {
     margin-right: 5px;
 }
-
 .skill > span:not(:last-child)::after {
     content : "|";
     margin-left: 5px;
 }
 
-.container{
-    display: flex;
+.container {
     flex-grow: 1;
     justify-content: space-between;
     border-bottom: solid black 1px;
     margin: 2px 0 2px 0;
 }
-
-.container > span{
+.row {
+    display: flex;
+}
+.container > span {
     margin-right: 20px;
 }
 
@@ -33,13 +33,12 @@
     margin-right: auto;
 }
 
-#gemLevel{
-    width: 10%;
-    margin-left: 35%;
+#calculate {
+    align-self:flex-end;
 }
 
-.levels{
-    min-height: 250px;
+.levels {
+    min-height: 200px;
 }
 
 .prev-calc-title {
@@ -65,4 +64,16 @@
 
 .close {
     margin-left: auto;
+}
+
+.input-container { 
+    display:flex;
+    flex-direction: column;
+}
+
+.inputs {
+    margin-left: auto;
+    width: 40%;
+    margin-right: auto;
+}
 }

@@ -4,7 +4,7 @@
 </head>
 <body>
     <div class="skills">
-        <p class="title">Attack skills</p>
+        <p class="title">Damage skills</p>
         <div id="attack" class="attack skill">
         </div>
         <p class="title">Cooldown Skills</p>
@@ -12,9 +12,17 @@
         </div>
     </div>
     <div class="calculator">
-        <input id="gemLevel" placeholder="Gem Level"></input>
-        <input id="gemCost" placeholder="Buy price"></input>
-        <button id="calculate">Calculate</button>
+        <div class="row inputs">
+            <div class="input-container">
+                <label for="gemLevel">Gem Level</label>
+                <input id="gemLevel" placeholder="Gem Level"></input>
+            </div>
+            <div class="input-container">
+                <label for="gemCost">Gem Cost</label>
+                <input id="gemCost" placeholder="Buy price"></input>
+            </div>
+            <button id="calculate">Calculate</button>
+        </div>
         <ul id="levels" class="levels">
         </ul>
         <p class="title prev-calc-title"> Previous calculations</p>

@@ -38,7 +38,7 @@ const calculateCost = (gemCost, gemLevel) => {
     levels[gemLevel] = gemCost;
     let prevCost = gemCost;
     for(let i = gemLevel -1 ; i > 0; i--){
-        levels[i] = Math.floor(prevCost / 3);
+        levels[i] = Math.ceil(prevCost / 3);
         prevCost = levels[i];
     }
     return levels;
@@ -51,10 +51,10 @@ let generateElements = (gemCost, gemLevel, track = true) => {
     const levels = calculateCost(gemCost, gemLevel);
     const levelEl = document.getElementById("levels");
     let levelHeadersHTML = `<div class="level-item">
-    <div class="container">
-        <span>Gem Level</span>
-        <span>Price to Buy At</span>
-        <span>Break Even Price</span>
+    <div class="container row">
+        <span style="font-weight:bold">Gem Level</span>
+        <span style="font-weight:bold">Expected Sale Price</span>
+        <span style="font-weight:bold"> < This Price = Profit</span>
     </div>
     </div>`;
     levelEl.innerHTML = "";
@@ -65,14 +65,14 @@ let generateElements = (gemCost, gemLevel, track = true) => {
         const div = document.createElement("div");
         div.setAttribute("class", "level-item")
         const container = document.createElement("div");
-        container.setAttribute("class", "container");
+        container.setAttribute("class", "container row");
         
         const levelText = document.createElement("span");
         const expectCost = document.createElement("span");
         const sellForAtLeast = document.createElement("span");
         levelText.textContent = i;
         expectCost.textContent = levels[i];
-        sellForAtLeast.textContent = Math.ceil(levels[i] * 1.05);
+        sellForAtLeast.textContent = Math.floor(levels[i] * .95);
   
         container.appendChild(levelText);
         container.appendChild(expectCost);
