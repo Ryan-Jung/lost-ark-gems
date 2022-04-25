@@ -91,8 +91,8 @@ const addPrevCalc = (gemCost,gemLevel) =>{
     const container = document.getElementById("prev-calc-container");
     let template = document.createElement("template");
     let prevCalc = `<div class="prev-calc-button-container">
-                        <button class="prev-calc-button" onClick="generateElements(${gemCost}, ${gemLevel}, false)">Gem Level: ${gemLevel} | Price: ${gemCost}</button>
-                        <button class="close">&#10006</button>
+                        <button class="prev-calc-button uk-button uk-button-default uk-button-small uk-width-1-1" onClick="generateElements(${gemCost}, ${gemLevel}, false)">Gem Level: ${gemLevel} <br> Price: ${gemCost}</button>
+                        <button class="close uk-button uk-button-default uk-button-danger uk-button-small">&#10006</button>
                     </div>`;
     template.innerHTML = prevCalc;
     template.content.firstChild.getElementsByClassName("close")[0].addEventListener("click" , (event) => {

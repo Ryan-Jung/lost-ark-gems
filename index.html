@@ -1,6 +1,7 @@
 <head>
     <script src="./gemCalc.js"></script>
     <link rel="stylesheet" type="text/css" href="./index.css"></link>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.13.10/dist/css/uikit.min.css" />
 </head>
 <body>
     <div class="skills">
@@ -15,13 +16,13 @@
         <div class="row inputs">
             <div class="input-container">
                 <label for="gemLevel">Gem Level</label>
-                <input id="gemLevel" placeholder="Gem Level"></input>
+                <input id="gemLevel" placeholder="Gem Level" class="uk-input"></input>
             </div>
             <div class="input-container">
                 <label for="gemCost">Min price to sell</label>
-                <input id="gemCost" placeholder="Min sale price"></input>
+                <input id="gemCost" placeholder="Min sale price" class="uk-input"></input>
             </div>
-            <button id="calculate">Calculate</button>
+            <button id="calculate" class="uk-button uk-button-primary">Calculate</button>
         </div>
         <ul id="levels" class="levels">
         </ul>
