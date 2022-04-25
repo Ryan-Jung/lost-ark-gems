@@ -54,7 +54,7 @@ let generateElements = (gemCost, gemLevel, track = true) => {
     <div class="container row">
         <span style="font-weight:bold">Gem Level</span>
         <span style="font-weight:bold">Expected Sale Price</span>
-        <span style="font-weight:bold"> < This Price = Profit</span>
+        <span style="font-weight:bold"> Buy < This Price = Profit</span>
     </div>
     </div>`;
     levelEl.innerHTML = "";
@@ -91,7 +91,7 @@ const addPrevCalc = (gemCost,gemLevel) =>{
     const container = document.getElementById("prev-calc-container");
     let template = document.createElement("template");
     let prevCalc = `<div class="prev-calc-button-container">
-                        <button class="prev-calc-button" onClick="generateElements(${gemCost}, ${gemLevel}, false)">Gem Level: ${gemLevel}|Cost: ${gemCost}</button>
+                        <button class="prev-calc-button" onClick="generateElements(${gemCost}, ${gemLevel}, false)">Gem Level: ${gemLevel} | Price: ${gemCost}</button>
                         <button class="close">&#10006</button>
                     </div>`;
     template.innerHTML = prevCalc;

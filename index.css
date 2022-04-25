@@ -23,6 +23,7 @@
 .row {
     display: flex;
 }
+
 .container > span {
     margin-right: 20px;
 }
