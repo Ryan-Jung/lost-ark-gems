@@ -1,21 +1,23 @@
 <head>
     <script src="./gemCalc.js"></script>
+    <link rel="stylesheet" type="text/css" href="./index.css"></link>
 </head>
 <body>
-    <div>
-        <ul id="attack" class="attack"></ul>
-        <ul id="cd" class="cooldown"></ul>
+    <div class="skills">
+        <p class="title">Attack skills</p>
+        <div id="attack" class="attack skill">
+        </div>
+        <p class="title">Cooldown Skills</p>
+        <div id="cd" class="cooldown skill">
+        </div>
     </div>
-    <input id="gemCost" placeholder="Gold cost"></input>
-    <input id="gemLevel" placeholder="gemLevel"></input>
-    <button id="calcualte">Calculate</button>
-    <ul id="levels" class="levels">
-        <li class="level-item">
-            <div class="container">
-                <span>Gem Level</span>
-                <span>Buy price</span>
-                <span>Sell for at least</span>
-            </div>
-        </li>
-    </ul>
+    <div class="calculator">
+        <input id="gemLevel" placeholder="Gem Level"></input>
+        <input id="gemCost" placeholder="Buy price"></input>
+        <button id="calculate">Calculate</button>
+        <ul id="levels" class="levels">
+        </ul>
+        <p class="title prev-calc-title"> Previous calculations</p>
+        <div id="prev-calc-container" class="prev-calc"></div>
+    </div>
 </body>
