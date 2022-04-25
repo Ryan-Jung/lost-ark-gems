@@ -51,16 +51,18 @@
     flex-direction: column;
     width: 50%;
     margin-left: 5%;
+    flex-wrap: wrap;
+    height: 350px;
 }
 
 #prev-calc-container > * {
     margin-top: 10px;
+    width: 50%
 }
 
 .prev-calc-button-container {
     display: flex;
     justify-content: flex-end;
-    width:50%;
 }
 
 .close {

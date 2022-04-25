@@ -88,7 +88,11 @@ const close = (event) => {
 }
 
 const addPrevCalc = (gemCost,gemLevel) =>{
+    const MAX_PREV_VAL = 19;
     const container = document.getElementById("prev-calc-container");
+    if(container?.children?.length > MAX_PREV_VAL){
+        container?.children[MAX_PREV_VAL].remove();
+    }
     let template = document.createElement("template");
     let prevCalc = `<div class="prev-calc-button-container">
                         <button class="prev-calc-button uk-button uk-button-default uk-button-small uk-width-1-1" onClick="generateElements(${gemCost}, ${gemLevel}, false)">Gem Level: ${gemLevel} <br> Price: ${gemCost}</button>
@@ -98,7 +102,7 @@ const addPrevCalc = (gemCost,gemLevel) =>{
     template.content.firstChild.getElementsByClassName("close")[0].addEventListener("click" , (event) => {
         event?.srcElement?.parentElement?.remove();
     });
-    container.prepend(template.content.firstChild);
+    container.insertBefore(template.content.firstChild, container.firstChild);
 } 
 
 
