@@ -58,14 +58,14 @@ const removeInputError = (inputId) => {
     $(`#${inputId}`).removeClass('uk-form-danger');
 }
 const isValidGemLevel = (gemLevel) => {
-    if(!gemLevel || !gemLevel.match(/^\d+$/) || gemLevel <= 0 || gemLevel > 10 ){
+    if(!gemLevel || !String(gemLevel).match(/^\d+$/) || gemLevel <= 0 || gemLevel > 10 ){
         return false;
     }
     return true;
 }
 
 const isValidGemCost = (gemCost) => {
-    if(!gemCost || !gemCost.match(/^\d+$/)){
+    if(!gemCost || !String(gemCost).match(/^\d+$/)){
         return false;
     }
     return true;
