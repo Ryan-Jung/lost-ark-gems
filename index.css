@@ -40,6 +40,8 @@
 
 .levels {
     min-height: 200px;
+    width: 50%;
+    margin: auto;
 }
 
 .prev-calc-title {
