@@ -114,7 +114,7 @@ let generateElements = (gemCost, gemLevel, track = true) => {
         levelText.textContent = i;
         expectCost.textContent = levels[i];
         sellForAtLeast.textContent = Math.floor(levels[i] * .95);
-  
+        sellForAtLeast.style.color = 'red';
         container.appendChild(levelText);
         container.appendChild(expectCost);
         container.appendChild(sellForAtLeast);
