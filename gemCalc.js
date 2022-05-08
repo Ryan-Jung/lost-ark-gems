@@ -112,8 +112,8 @@ let generateElements = (gemCost, gemLevel, track = true) => {
         const expectCost = document.createElement("span");
         const sellForAtLeast = document.createElement("span");
         levelText.textContent = i;
-        expectCost.textContent = levels[i];
-        sellForAtLeast.textContent = Math.floor(levels[i] * .95);
+        expectCost.textContent = levels[i].toLocaleString('en-US');
+        sellForAtLeast.textContent = Math.floor(levels[i] * .95).toLocaleString('en-US');
         sellForAtLeast.style.color = 'red';
         container.appendChild(levelText);
         container.appendChild(expectCost);
