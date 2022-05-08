@@ -83,7 +83,7 @@ let generateElements = (gemCost, gemLevel, track = true) => {
         return;
     }
     removeInputError('gemCost');
-    
+
     if(track){
         addPrevCalc(gemCost,gemLevel);
     }
@@ -105,7 +105,9 @@ let generateElements = (gemCost, gemLevel, track = true) => {
         div.setAttribute("class", "level-item")
         const container = document.createElement("div");
         container.setAttribute("class", "container row");
-        
+        if(i === parseInt(gemLevel)){
+            div.style.backgroundColor = 'lightgreen';
+        }
         const levelText = document.createElement("span");
         const expectCost = document.createElement("span");
         const sellForAtLeast = document.createElement("span");
