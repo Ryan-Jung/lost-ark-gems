@@ -35,16 +35,55 @@ const getGemsWorthShit = () => {
 
 const calculateCost = (gemCost, gemLevel) => {
     let levels = [];
-    levels[gemLevel] = gemCost;
+    gemLevel = parseInt(gemLevel);
+    levels[gemLevel] = parseInt(gemCost);
     let prevCost = gemCost;
     for(let i = gemLevel -1 ; i > 0; i--){
         levels[i] = Math.ceil(prevCost / 3);
         prevCost = levels[i];
     }
+    prevCost = gemCost;
+    for(let i = gemLevel + 1; i <= 10; i++ ){
+        levels[i] = prevCost * 3;
+        prevCost = levels[i];
+    }
     return levels;
 }
 
+const showErrorOnInput = (inputId) => {
+   $(`#${inputId}`).addClass('uk-form-danger');
+}
+
+const removeInputError = (inputId) => {
+    $(`#${inputId}`).removeClass('uk-form-danger');
+}
+const isValidGemLevel = (gemLevel) => {
+    if(!gemLevel || !gemLevel.match(/^\d+$/) || gemLevel <= 0 || gemLevel > 10 ){
+        return false;
+    }
+    return true;
+}
+
+const isValidGemCost = (gemCost) => {
+    if(!gemCost || !gemCost.match(/^\d+$/)){
+        return false;
+    }
+    return true;
+}
+
+
 let generateElements = (gemCost, gemLevel, track = true) => {
+    if(!isValidGemLevel(gemLevel)){
+        showErrorOnInput('gemLevel');
+        return;
+    }
+    removeInputError('gemLevel');
+    if(!isValidGemCost(gemCost)){
+        showErrorOnInput('gemCost');
+        return;
+    }
+    removeInputError('gemCost');
+    
     if(track){
         addPrevCalc(gemCost,gemLevel);
     }
